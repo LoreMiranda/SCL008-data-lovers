@@ -12,11 +12,12 @@ const filterData = (data, condition) => {
   //console.log(filter)
   return filter;
   }
-
-
   
 
 //const sortData = (data, sortBy, sortOrder) => {
+ 
+
+
 
 //}
 
