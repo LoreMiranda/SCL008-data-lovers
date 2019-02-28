@@ -3,104 +3,123 @@ const data = POKEMON.pokemon; //constante para manipular la data
 const containerRoot = document.getElementById("root"); //todo lo que haga en el dom se muestra en el html por el id root
 const showData = (data) => { //funcion para mostrar la data
 
+
+
+//BOTONES
+
+const btnObjetos = document.getElementsByTagName("button")[0];
+const btnPokedex = document.getElementsByTagName("button")[1];
+const btnMapa = document.getElementsByTagName("button")[2];
+const btnEventos = document.getElementsByTagName("button")[3];
+
+
+btnPokedex.addEventListener("click", () => {
+document.getElementById("root").innerHTML = "";
+
+
 data.forEach(element => {
-//console.log(element.name)    
-containerRoot.innerHTML += `<div class="card-with-modal">
-<div class="card">
-    <img src=${element.img} class="card-img-top" alt="${element.name}">
-    <div class="card-body">
-      <h5 class="card-title">${element.name}</h5>
-      <p> Tipo: ${element.type}</p>
-      <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
-          Más Info!
-        </button>
-        
-        
-        <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src=${element.img} class="card-img" alt="${element.name}">
+  //console.log(element.name)    
+  containerRoot.innerHTML += `<div class="card-with-modal">
+  <div class="card">
+      <img src=${element.img} class="card-img-top" alt="${element.name}">
+      <div class="card-body">
+        <h5 class="card-title">${element.name}</h5>
+        <p> Tipo: ${element.type}</p>
+        <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
+            Más Info!
+          </button>
+          
+          
+          <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img src=${element.img} class="card-img" alt="${element.name}">
+                        </div>
+                        
+                        
+                        <div class="card-inside-modal">
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">${element.name}</h5>
+                            <p class="card-text">Tipo: ${element.type}</p>
+                            <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
+                            <p class="card-text">Aparece en huevos de: ${element.egg}</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
                       </div>
-                      
-                      
-                      <div class="card-inside-modal">
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">${element.name}</h5>
-                          <p class="card-text">Tipo: ${element.type}</p>
-                          <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
-                          <p class="card-text">Aparece en huevos de: ${element.egg}</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`    
+      })
+  });
+
+  //filtrar
+  document.getElementById("pokemontype").addEventListener("change", () => {
+      let condition = document.getElementById("pokemontype").value;
+      let result = window.filterData(data, condition);
+  //console.log(result)
+      containerRoot.innerHTML = "";
+      
+  
+      result.forEach(element => {
+          containerRoot.innerHTML += `<div class="card-with-modal">
+          <div class="card">
+              <img src=${element.img} class="card-img-top" alt="${element.name}">
+              <div class="card-body">
+                <h5 class="card-title">${element.name}</h5>
+                <p> Tipo: ${element.type}</p>
+                <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
+                <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
+                    Más Info!
+                  </button>
+                  
+                  
+                  <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="card mb-3" style="max-width: 540px;">
+                              <div class="row no-gutters">
+                                <div class="col-md-4">
+                                  <img src=${element.img} class="card-img" alt="${element.name}">
+                                </div>
+                                
+                                
+                                <div class="card-inside-modal">
+                                <div class="col-md-8">
+                                  <div class="card-body">
+                                    <h5 class="card-title">${element.name}</h5>
+                                    <p class="card-text">Tipo: ${element.type}</p>
+                                    <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
+                                    <p class="card-text">Aparece en huevos de: ${element.egg}</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                       </div>
                     </div>
                   </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>`    
-    })
-}
-//filtrar
-document.getElementById("pokemontype").addEventListener("change", () => {
-    let condition = document.getElementById("pokemontype").value;
-    let result = window.filterData(data, condition);
-//console.log(result)
-    containerRoot.innerHTML = "";
-    
+                </div>`  
+  
+      })
+  })
+};
 
-    result.forEach(element => {
-        containerRoot.innerHTML += `<div class="card-with-modal">
-        <div class="card">
-            <img src=${element.img} class="card-img-top" alt="${element.name}">
-            <div class="card-body">
-              <h5 class="card-title">${element.name}</h5>
-              <p> Tipo: ${element.type}</p>
-              <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
-                  Más Info!
-                </button>
-                
-                
-                <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                              <div class="col-md-4">
-                                <img src=${element.img} class="card-img" alt="${element.name}">
-                              </div>
-                              
-                              
-                              <div class="card-inside-modal">
-                              <div class="col-md-8">
-                                <div class="card-body">
-                                  <h5 class="card-title">${element.name}</h5>
-                                  <p class="card-text">Tipo: ${element.type}</p>
-                                  <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
-                                  <p class="card-text">Aparece en huevos de: ${element.egg}</p>
-                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>`  
 
-    })
-});
+
 
 /*for (let i = 0; i < data.length; i++) {
     console.log(data[i].name)
@@ -119,4 +138,5 @@ for (let i = 0; i < data.length; i++) {
 */
 
 
-window.onload = showData(data); //no se ejecuta la función hasta que se asegure que esta todo listo
+window.onload = showData(data); 
+//no se ejecuta la función hasta que se asegure que esta todo listo
