@@ -61,6 +61,7 @@
   background: black;
   display: inline-block;
   align-content: flex-start;
+  border: black;
 }
 
 .image-button{

@@ -15,7 +15,9 @@ const filterData = (data, condition) => {
   
 
 //const sortData = (data, sortBy, sortOrder) => {
- 
+//const sortData = (data, name, condition2) => {
+
+//} 
 
 
 
