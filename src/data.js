@@ -15,13 +15,16 @@ const filterData = (data, condition) => {
   
 
 //const sortData = (data, sortBy, sortOrder) => {
-//const sortData = (data, name, condition2) => {
+const sortData = (data, sortBy, sortOrder) => {
+  let orderAz = data.sort((a,b) => {
+return a[sortBy].localeCompare(b[sortBy]);
+    })
+  if (sortOrder === "order-za"){
+  orderAz.reverse();
+  }
+  return orderAz;
+}
 
-//} 
-
-
-
-//}
 
 //const computeStats = (data) => {
 
@@ -35,3 +38,4 @@ const filterData = (data, condition) => {
 
 
 window.filterData = filterData;
+window.sortData = sortData;
