@@ -4084,6 +4084,12 @@ const POKEMON = {
     ]
   }]
 }
+<<<<<<< HEAD
 ;
 
 window.POKEMON = POKEMON;
+=======
+;;
+
+window.POKEMON = POKEMON;
+>>>>>>> 56efed6885f58175232e4114ebbe9d9844ffaf20

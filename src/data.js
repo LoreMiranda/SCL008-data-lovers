@@ -3,26 +3,23 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
+
 const filterData = (data, condition) => {
-  let filter = data.filter(element => {
-    return element.type.includes(condition) === true;
+  const filter = data.filter(element =>{
+    return element.type.indexOf(condition) !== -1; 
+    //return element.type.includes(condition) === true;
   })
+  //console.log(filter)
   return filter;
-}
-
-window.filterData = filterData;
-
-const sortData = (data, sortBy, sortOrder) => {
-   let sort = data
-    if( )
-
-}
-
-// const filterData = (data, condition) => {
-
-//}
+  }
+  
 
 //const sortData = (data, sortBy, sortOrder) => {
+//const sortData = (data, name, condition2) => {
+
+//} 
+
+
 
 //}
 
@@ -30,7 +27,11 @@ const sortData = (data, sortBy, sortOrder) => {
 
 //}
 
-//window.filterData = filterData;
+//window.data = data;
+
 //window.sortData = sortData;
 //window.computeStats = computeStats;
 
+
+
+window.filterData = filterData;
