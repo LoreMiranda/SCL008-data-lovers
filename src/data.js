@@ -3,16 +3,34 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-
 const filterData = (data, condition) => {
-  const filter = data.filter(element =>{
-    return element.type.indexOf(condition) !== -1; 
-    //return element.type.includes(condition) === true;
+  let filter = data.filter(element => {
+    return element.type.includes(condition) === true;
   })
-  //console.log(filter)
   return filter;
-  }
-  
+}
+
+
+window.filterData = filterData;
+
+ // sortby: que va a ordenar: por nombre
+ // sortorder: de la a a la z
+ 
+/* const sortData = (data, sortBy, sortOrder) => {
+   let sort = data
+    if( )
+
+} */
+
+// const filterData = (data, condition) => {
+
+//}
+
+//const sortData = (data, sortBy, sortOrder) => {
+
+
+
+/* CAMBIOS LORE
 
 //const sortData = (data, sortBy, sortOrder) => {
 const sortData = (data, sortBy, sortOrder) => {
@@ -26,12 +44,12 @@ return a[sortBy].localeCompare(b[sortBy]);
 }
 
 
+
 //const computeStats = (data) => {
 
 //}
 
-//window.data = data;
-
+//window.filterData = filterData;
 //window.sortData = sortData;
 //window.computeStats = computeStats;
 
@@ -39,3 +57,4 @@ return a[sortBy].localeCompare(b[sortBy]);
 
 window.filterData = filterData;
 window.sortData = sortData;
+*/

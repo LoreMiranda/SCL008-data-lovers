@@ -1,9 +1,57 @@
 /* Manejo del DOM */
+
+const data = window.POKEMON.pokemon;
+const container = document.getElementById('root');
+
+const showData = (data) => {
+  // nombre y foto
+  data.forEach(element => {
+    // data[i]
+    container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
+                             <p> Número: ${element.num}</p>
+                             <p> Nombre: ${element.name}</p>
+                             <p> Tipo: ${element.type}</p>
+                             <p> Caramelo: ${element.candy}</p>
+                             <p> Huevo: ${element.egg}</p>
+                             <p> Debilidad: ${element.weaknesses}</p>`
+   
+  })
+  
+}
+
+// const showData = (data) => {
+//   for (let i = 0; i < data.length; i++) {
+//     container.innerHTML += `<p>${data[i].name}</p>
+//                             <img class="image" src="${data[i].image}" alt="${data[i].name}">`
+//   }
+// }
+
+document.getElementById('select-type').addEventListener('change', () => {
+  let condition = document.getElementById('select-type').value;
+  let result = window.filterData(data, condition);
+
+  container.innerHTML = '';
+  result.forEach(element => {
+    container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
+                            <p> Número: ${element.num}</p>
+                            <p> Nombre: ${element.name}</p>
+                            <p> Tipo: ${element.type}</p>
+                            <p> Caramelo: ${element.candy}</p>
+                            <p> Huevo: ${element.egg}</p>
+                            <p> Debilidad: ${element.weaknesses}</p>`
+                            
+
+  })
+
+});
+
+
+
+window.onload = showData(data);
+/*
 const data = POKEMON.pokemon; //constante para manipular la data
 const containerRoot = document.getElementById("root"); //todo lo que haga en el dom se muestra en el html por el id root
 const showData = (data) => { //funcion para mostrar la data
-
-
 
 //BOTONES
 
@@ -11,7 +59,6 @@ const btnObjetos = document.getElementsByTagName("button")[0];
 const btnPokedex = document.getElementsByTagName("button")[1];
 const btnMapa = document.getElementsByTagName("button")[2];
 const btnEventos = document.getElementsByTagName("button")[3];
-
 
 //INICIO BOTON POKEDEX Y TEMPLATE DE LA DATA
 btnPokedex.addEventListener("click", () => {
@@ -115,12 +162,19 @@ data.forEach(element => {
 
 //INICIO ORDEN DE POKEDEX POR ABC
 
+<<<<<<< Updated upstream
 
 
 document.getElementById("pokemonOrder").addEventListener("change", () => {
 let condition = document.getElementById("pokemonOrder").value;
 let pokeOrder = window.sortData(data, "pokemonChoose", condition);
       containerRoot.innerHTML = "";
+=======
+// document.getElementById("pokemonOrder").addEventListener("change", () => {
+// let condition2 = document.getElementById("pokemonOrder").value;
+// let pokeOrder = window.sortData(data, condition2);
+//       containerRoot.innerHTML = "";
+>>>>>>> Stashed changes
   
       
   pokeOrder.forEach(element => {
@@ -181,8 +235,11 @@ for (let i = 0; i < data.length; i++) {
     if (data.name[i] <= a){
     }
 }
-*/
-
 
 window.onload = showData(data); 
 //no se ejecuta la función hasta que se asegure que esta todo listo
+*/
+
+
+
+
