@@ -10,6 +10,7 @@ const filterData = (data, condition) => {
   return filter;
 }
 
+
 window.filterData = filterData;
  // sortby: que va a ordenar: por nombre
  // sortorder: de la a a la z
@@ -26,7 +27,22 @@ window.filterData = filterData;
 
 //const sortData = (data, sortBy, sortOrder) => {
 
-//}
+
+
+/* CAMBIOS LORE
+
+//const sortData = (data, sortBy, sortOrder) => {
+const sortData = (data, sortBy, sortOrder) => {
+  let orderAz = data.sort((a,b) => {
+return a[sortBy].localeCompare(b[sortBy]);
+    })
+  if (sortOrder === "order-za"){
+  orderAz.reverse();
+  }
+  return orderAz;
+}
+
+
 
 //const computeStats = (data) => {
 
@@ -35,3 +51,9 @@ window.filterData = filterData;
 //window.filterData = filterData;
 //window.sortData = sortData;
 //window.computeStats = computeStats;
+
+
+
+window.filterData = filterData;
+window.sortData = sortData;
+*/
