@@ -35,4 +35,3 @@ window.filterData = filterData;
 //window.filterData = filterData;
 //window.sortData = sortData;
 //window.computeStats = computeStats;
-

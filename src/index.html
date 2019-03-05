@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  -->
     </head>
   <body>
 
 <!-- INICIO NAVBAR -->
 <nav class="navbar navbar-light bg-black .navbar-toggler">
-  <a class="navbar-brand" href="#">
-    <img src="Poke_img/logoPokefanGO.png" width="300" height="50" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="#">    <img src="Poke_img/logoPokefanGO.png" width="300" height="50" class="d-inline-block align-top" alt="">
   </a>
 </nav>
  
@@ -20,11 +19,13 @@
 <!-- IMAGEN -->
 <div class="imagegrass">
 <img src="Poke_img/HEADER2.jpg" class="img-fluid" alt="Responsive image">
+
 </div>
 <!-- FIN IMAGEN -->
 
 <!-- INICIO BOTONES -->
 <div class="buttons">
+
 <button class="boton1"><img src="Poke_img/pokedex-small.png" alt="pokedex" title="POKEDEX" class="image-button"></button>
 <!--<button class="boton1"><img src="Poke_img/objetos/BolsaObjetos.png" alt="mochila" title="OBJETOS" class="image-button"></button>
 <button class="boton1"><img src="Poke_img/map_icon.png" alt="mapa" title="MAPA AVISTAMIENTOS"class="image-button"></button>
@@ -75,18 +76,18 @@
     </div> -->
 
     <!-- CARD 
+
     <div class="card-with-modal">
         <div class="card" style="width: 18rem;">
             <img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Bulbasaur</h5>
               <p class="card-text">Débil contra: ejemplo</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                   Más Info!
                 </button>
-                -->
-
-                <!-- Modal 
+                
+                 MODAL
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -95,9 +96,8 @@
                               <div class="col-md-4">
                                 <img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="card-img" alt="...">
                               </div>
-                              -->
-
-                              <!-- nueva card 
+                              
+                              NUEVA CARD 
                               <div class="card-inside-modal">
                               <div class="col-md-8">
                                 <div class="card-body">
@@ -117,23 +117,49 @@
                   </div>
                 </div>
               </div>
-
               
-
             </div>
           </div>
-
     </div>
-    -->
+  FIN CARD -->
 
-    <!-- FIN CARD -->
 
-    <div id="root"></div>
+<!-- INICIO SELECT PARA FILTRAR POR TIPO -->
+<select id="pokemontype">
+  <option value="all">Filtrar Por Tipo</option>
+  <option value="Water">Agua</option>
+  <option value="Bug">Bicho</option>
+  <option value="Dragon">Dragón</option>
+  <option value="Electric">Eléctrico</option>
+  <option value="Ghost">Fantasma</option>
+  <option value="Fire">Fuego</option>
+  <option value="Ice">Hielo</option>
+  <option value="Grass">Hierba</option>
+  <option value="Fighting">Luchador</option>
+  <option value="Normal">Normal</option>
+  <option value="Psychic">Psíquico</option>
+  <option value="Rock">Roca</option>
+  <option value="Ground">Tierra</option>
+  <option value="Poison">Veneno</option>
+  <option value="Flying">Volador</option>
+</select>
+<!-- FIN SELECT FILTRAR POR TIPO -->
+
+
+<!-- INICIO SELECT PARA ORDENAR -->
+<!-- <select id="pokemonOrder">
+  <option value="0">Ordenar</option>
+  <option value="orderAz">A - Z</option>
+  <option value="orderZa">Z - A</option> -->
+<!-- FIN SELECT PARA ORDENAR -->
+
+
+    <div id="root" class="container-fluid"></div>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!--  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
