@@ -11,7 +11,7 @@ const showData = (data) => {
     <p> Número: ${element.num}</p>
     <p> Nombre: ${element.name}</p>
     <p> Tipo: ${element.type}</p>
-    <p> Dulce: ${element.candy}</p>
+    <p> Caramelo: ${element.candy}</p>
     <p> Huevo: ${element.egg}</p>
     <p> Debilidad: ${element.weaknesses}</p>`
    
