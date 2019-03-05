@@ -8,12 +8,12 @@ const showData = (data) => {
   data.forEach(element => {
     // data[i]
     container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
-    <p> Número: ${element.num}</p>
-    <p> Nombre: ${element.name}</p>
-    <p> Tipo: ${element.type}</p>
-    <p> Caramelo: ${element.candy}</p>
-    <p> Huevo: ${element.egg}</p>
-    <p> Debilidad: ${element.weaknesses}</p>`
+                             <p> Número: ${element.num}</p>
+                             <p> Nombre: ${element.name}</p>
+                             <p> Tipo: ${element.type}</p>
+                             <p> Caramelo: ${element.candy}</p>
+                             <p> Huevo: ${element.egg}</p>
+                             <p> Debilidad: ${element.weaknesses}</p>`
    
   })
   
@@ -36,7 +36,7 @@ document.getElementById('select-type').addEventListener('change', () => {
                             <p> Número: ${element.num}</p>
                             <p> Nombre: ${element.name}</p>
                             <p> Tipo: ${element.type}</p>
-                            <p> Dulce: ${element.candy}</p>
+                            <p> Caramelo: ${element.candy}</p>
                             <p> Huevo: ${element.egg}</p>
                             <p> Debilidad: ${element.weaknesses}</p>`
                             
@@ -53,15 +53,12 @@ const data = POKEMON.pokemon; //constante para manipular la data
 const containerRoot = document.getElementById("root"); //todo lo que haga en el dom se muestra en el html por el id root
 const showData = (data) => { //funcion para mostrar la data
 
-
-
 //BOTONES
 
 const btnObjetos = document.getElementsByTagName("button")[0];
 const btnPokedex = document.getElementsByTagName("button")[1];
 const btnMapa = document.getElementsByTagName("button")[2];
 const btnEventos = document.getElementsByTagName("button")[3];
-
 
 //INICIO BOTON POKEDEX Y TEMPLATE DE LA DATA
 btnPokedex.addEventListener("click", () => {
@@ -165,12 +162,19 @@ data.forEach(element => {
 
 //INICIO ORDEN DE POKEDEX POR ABC
 
+<<<<<<< Updated upstream
 
 
 document.getElementById("pokemonOrder").addEventListener("change", () => {
 let condition = document.getElementById("pokemonOrder").value;
 let pokeOrder = window.sortData(data, "pokemonChoose", condition);
       containerRoot.innerHTML = "";
+=======
+// document.getElementById("pokemonOrder").addEventListener("change", () => {
+// let condition2 = document.getElementById("pokemonOrder").value;
+// let pokeOrder = window.sortData(data, condition2);
+//       containerRoot.innerHTML = "";
+>>>>>>> Stashed changes
   
       
   pokeOrder.forEach(element => {

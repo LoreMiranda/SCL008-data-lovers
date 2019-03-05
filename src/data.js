@@ -12,6 +12,7 @@ const filterData = (data, condition) => {
 
 
 window.filterData = filterData;
+
  // sortby: que va a ordenar: por nombre
  // sortorder: de la a a la z
  
