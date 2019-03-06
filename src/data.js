@@ -10,7 +10,6 @@ const filterData = (data, condition) => {
   return filter;
 }
 
-
 window.filterData = filterData;
 
  // sortby: que va a ordenar: por nombre
@@ -21,14 +20,6 @@ window.filterData = filterData;
     if( )
 
 } */
-
-// const filterData = (data, condition) => {
-
-//}
-
-//const sortData = (data, sortBy, sortOrder) => {
-
-
 
 /* CAMBIOS LORE
 
@@ -43,18 +34,11 @@ return a[sortBy].localeCompare(b[sortBy]);
   return orderAz;
 }
 
-
-
-//const computeStats = (data) => {
+//const computeStats = (data) => { // esto es para sacar el calculo
 
 //}
 
-//window.filterData = filterData;
 //window.sortData = sortData;
 //window.computeStats = computeStats;
 
-
-
-window.filterData = filterData;
-window.sortData = sortData;
 */

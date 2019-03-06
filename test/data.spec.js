@@ -9,7 +9,7 @@ describe('Funcion filterData', () => { // a quien voy a testear//
   
       name: "Squirtle",
       type: "Water"
-      
+    
     },
     {
       name:"Dratini",

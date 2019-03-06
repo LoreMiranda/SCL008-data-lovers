@@ -1,4 +1,4 @@
-/* Manejo del DOM */
+/* Manejo del DOM 
 
 const data = window.POKEMON.pokemon;
 const container = document.getElementById('root');
@@ -45,11 +45,9 @@ document.getElementById('select-type').addEventListener('change', () => {
 
 });
 
+ */
 
-
-window.onload = showData(data);
-/*
-const data = POKEMON.pokemon; //constante para manipular la data
+const data = window.POKEMON.pokemon; //constante para manipular la data
 const containerRoot = document.getElementById("root"); //todo lo que haga en el dom se muestra en el html por el id root
 const showData = (data) => { //funcion para mostrar la data
 
@@ -65,7 +63,11 @@ btnPokedex.addEventListener("click", () => {
 document.getElementById("root").innerHTML = "";
 
 data.forEach(element => {
-  containerRoot.innerHTML += `<div class="card-with-modal">
+  containerRoot.innerHTML += 
+  `<div class="container"> 
+  <div class="row">
+  <div class="col-lg-8 col-sm-4">
+  <div class="card-with-modal">
   <div class="card">
       <img src=${element.img} class="card-img-top" alt="${element.name}">
       <div class="card-body">
@@ -76,7 +78,6 @@ data.forEach(element => {
             Más Info!
           </button>
           
-          
           <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -86,14 +87,17 @@ data.forEach(element => {
                           <img src=${element.img} class="card-img" alt="${element.name}">
                         </div>
                         
-                        
                         <div class="card-inside-modal">
                         <div class="col-md-8">
                           <div class="card-body">
                             <h5 class="card-title">${element.name}</h5>
+                            <p class="card-text">Número: ${element.num}</p>
                             <p class="card-text">Tipo: ${element.type}</p>
-                            <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
+                            <p class="card-text">Caramelo: ${element.candy}</p>
+                            <p class="card-text">Caramelos para evolución: ${element.candy_count}</p>
                             <p class="card-text">Aparece en huevos de: ${element.egg}</p>
+                            <p class="card-text">Siguiente evolución: ${element.next_evolution}</p>
+                            <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                           </div>
                         </div>
@@ -105,7 +109,11 @@ data.forEach(element => {
               </div>
             </div>
           </div>
-        </div>`    
+        </div>
+        </div>
+        </div>
+      </div>`   
+      // AGREGUÉ 3 DIVS 
       })
   });
   //FIN BOTON POKEDEX Y TEMPLATE DE LA DATA
@@ -162,21 +170,11 @@ data.forEach(element => {
 
 //INICIO ORDEN DE POKEDEX POR ABC
 
-<<<<<<< Updated upstream
-
-
 document.getElementById("pokemonOrder").addEventListener("change", () => {
 let condition = document.getElementById("pokemonOrder").value;
 let pokeOrder = window.sortData(data, "pokemonChoose", condition);
       containerRoot.innerHTML = "";
-=======
-// document.getElementById("pokemonOrder").addEventListener("change", () => {
-// let condition2 = document.getElementById("pokemonOrder").value;
-// let pokeOrder = window.sortData(data, condition2);
-//       containerRoot.innerHTML = "";
->>>>>>> Stashed changes
-  
-      
+    
   pokeOrder.forEach(element => {
     containerRoot.innerHTML += `<div class="card-with-modal">
       <div class="card">
@@ -221,6 +219,8 @@ let pokeOrder = window.sortData(data, "pokemonChoose", condition);
 })
 
 
+/* INICIO BOTON OBJETOS*/
+window.onload = showData(data);
 /*for (let i = 0; i < data.length; i++) {
     console.log(data[i].name)
     console.log(data[i].type)
