@@ -9,7 +9,14 @@ const showData = (data) => {
     // data[i]
     container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
                              <p> Número: ${element.num}</p>
-  })  
+                             <p> Nombre: ${element.name}</p>
+                             <p> Tipo: ${element.type}</p>
+                             <p> Caramelo: ${element.candy}</p>
+                             <p> Huevo: ${element.egg}</p>
+                             <p> Debilidad: ${element.weaknesses}</p>`
+   
+  })
+  
 }
 
 // const showData = (data) => {
@@ -26,7 +33,14 @@ document.getElementById('select-type').addEventListener('change', () => {
   container.innerHTML = '';
   result.forEach(element => {
     container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
-                            <p> Número: ${element.num}</p>                       
+                            <p> Número: ${element.num}</p>
+                            <p> Nombre: ${element.name}</p>
+                            <p> Tipo: ${element.type}</p>
+                            <p> Caramelo: ${element.candy}</p>
+                            <p> Huevo: ${element.egg}</p>
+                            <p> Debilidad: ${element.weaknesses}</p>`
+                            
+
   })
 });
 
@@ -153,24 +167,25 @@ data.forEach(element => {
   })
 };
 
-//INICIO ORDEN DE POKEDEX POR ABC
+//INICIO ORDEN DE POKEDEX POR ABC Y AL REVES
 
-document.getElementById("pokemonOrder").addEventListener("change", () => {
-let condition = document.getElementById("pokemonOrder").value;
-let pokeOrder = window.sortData(data, "pokemonChoose", condition);
-      containerRoot.innerHTML = "";
-    
-  pokeOrder.forEach(element => {
-    containerRoot.innerHTML += `<div class="card-with-modal">
-      <div class="card">
-          <img src=${element.img} class="card-img-top" alt="${element.name}">
-          <div class="card-body">
-            <h5 class="card-title">${element.name}</h5>
-            <p> Tipo: ${element.type}</p>
-            <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
-            <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
-                Más Info!
-              </button>
+// document.getElementById("pokemonOrder").addEventListener("change", () => {
+// let condition2 = document.getElementById("pokemonOrder").value;
+// let pokeOrder = window.sortData(data, condition2);
+//       containerRoot.innerHTML = "";
+  
+      
+//   pokeOrder.forEach(element => {
+//       containerRoot.innerHTML += `<div class="card-with-modal">
+//       <div class="card">
+//           <img src=${element.img} class="card-img-top" alt="${element.name}">
+//           <div class="card-body">
+//             <h5 class="card-title">${element.name}</h5>
+//             <p> Tipo: ${element.type}</p>
+//             <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
+//             <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
+//                 Más Info!
+//               </button>
                                 
               <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
