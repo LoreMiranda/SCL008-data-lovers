@@ -9,8 +9,8 @@ const showData = (data) => { //funcion para mostrar la data
 
 const btnObjetos = document.getElementsByTagName("button")[0];
 const btnPokedex = document.getElementsByTagName("button")[1];
-const btnMapa = document.getElementsByTagName("button")[2];
-const btnEventos = document.getElementsByTagName("button")[3];
+//const btnMapa = document.getElementsByTagName("button")[2];
+//const btnEventos = document.getElementsByTagName("button")[3];
 
 
 //INICIO BOTON POKEDEX Y TEMPLATE DE LA DATA
@@ -19,9 +19,8 @@ document.getElementById("root").innerHTML = "";
 
 data.forEach(element => {
   containerRoot.innerHTML += `
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-sm-4">
+  
+      <div class="col-3">
   <div class="card-with-modal">
   <div class="card">
       <img src=${element.img} class="card-img-top" alt="${element.name}">
@@ -36,16 +35,13 @@ data.forEach(element => {
           
           <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                  <div class="card mb-3" style="max-width: 540px;">
+                  <div class="card mb-3" style="max-width: 500px;">
                       <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <img src=${element.img} class="card-img" alt="${element.name}">
-                        </div>
-                        
-                        
+                        </div>     
                         <div class="card-inside-modal">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                           <div class="card-body">
                             <h5 class="card-title">${element.name}</h5>
                             <p class="card-text">N° ${element.num}</p>
@@ -53,22 +49,20 @@ data.forEach(element => {
                             <p class="card-text">Caramelos: ${element.candy}</p>
                             <p class="card-text">Caramelos para Evolución: ${element.candy_count}</p>
                             <p class="card-text">Aparece en huevos de: ${element.egg}</p>
-                            <p class="card-text">Siguiente Evolución: ${element.next_evolution}</p>
+                            <p class="card-text">Siguiente Evolución: </p>
                             <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
                             
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
 </div>
 </div>`    
       })
@@ -82,56 +76,65 @@ data.forEach(element => {
       containerRoot.innerHTML = "";
       
       result.forEach(element => {
-          containerRoot.innerHTML += `<div class="card-with-modal">
-          <div class="card">
-              <img src=${element.img} class="card-img-top" alt="${element.name}">
-              <div class="card-body">
-                <h5 class="card-title">${element.name}</h5>
-                <p> Tipo: ${element.type}</p>
-                <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
-                <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
-                    Más Info!
-                  </button>
-                                    
-                  <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                          <div class="card mb-3" style="max-width: 540px;">
-                              <div class="row no-gutters">
-                                <div class="col-md-4">
-                                  <img src=${element.img} class="card-img" alt="${element.name}">
-                                </div>
-                                                                
-                                <div class="card-inside-modal">
-                                <div class="col-md-8">
-                                  <div class="card-body">
-                                    <h5 class="card-title">${element.name}</h5>
-                                    <p class="card-text">Tipo: ${element.type}</p>
-                                    <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
-                                    <p class="card-text">Aparece en huevos de: ${element.egg}</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          containerRoot.innerHTML += `
+          
+      <div class="col-3">
+  <div class="card-with-modal">
+  <div class="card">
+      <img src=${element.img} class="card-img-top" alt="${element.name}">
+      <div class="card-body">
+        <h5 class="card-title">${element.name}</h5>
+        <p> Tipo: ${element.type}</p>
+        <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
+            Más Info!
+          </button>
+          
+          
+          <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="card mb-3" style="max-width: 500px;">
+                      <div class="row no-gutters">
+                        <div class="col-md-6">
+                          <img src=${element.img} class="card-img" alt="${element.name}">
+                        </div>     
+                        <div class="card-inside-modal">
+                        <div class="col-md-12">
+                          <div class="card-body">
+                            <h5 class="card-title">${element.name}</h5>
+                            <p class="card-text">N° ${element.num}</p>
+                            <p class="card-text">Tipo: ${element.type}</p>
+                            <p class="card-text">Caramelos: ${element.candy}</p>
+                            <p class="card-text">Caramelos para Evolución: ${element.candy_count}</p>
+                            <p class="card-text">Aparece en huevos de: ${element.egg}</p>
+                            <p class="card-text">Siguiente Evolución: </p>
+                            <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>`    
+              </div>
+            </div>
+          </div>
+</div>
+</div>`    
       })
   })
 };
 
 //INICIO ORDEN DE POKEDEX POR ABC
 
+/*
 
-
-document.getElementById("pokemonOrder").addEventListener("change", () => {
+const pokeAbc = document.getElementById("pokemonOrder");
+pokeAbc.addEventListener("change", () => {
 let condition = document.getElementById("pokemonOrder").value;
-let pokeOrder = window.sortData(data, "pokemonChoose", condition);
+let pokeOrder = window.sortData(data, "nameOrNumber", condition);
       containerRoot.innerHTML = "";
   
       
@@ -195,36 +198,37 @@ for (let i = 0; i < data.length; i++) {
 }
 */
 
-/*
+
 //INICIO BOTON OBJETOS
-btnObjetos.addEventListener("click", () => {
-  document.getElementById("root").innerHTML = "";
+// btnObjetos.addEventListener("click", () => {
+//   document.getElementById("root").innerHTML = "";
   
-  data.forEach(element => {
-    containerRoot.innerHTML += `
-    <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-</p>
-<div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body">
+//   data.forEach(element => {
+//     containerRoot.innerHTML += `
+//     <p>
+//   <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+//   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+//   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+// </p>
+// <div class="row">
+//   <div class="col">
+//     <div class="collapse multi-collapse" id="multiCollapseExample1">
+//       <div class="card card-body">
         
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample2">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-  </div>
-</div>
-`
-*/
+//       </div>
+//     </div>
+//   </div>
+//   <div class="col">
+//     <div class="collapse multi-collapse" id="multiCollapseExample2">
+//       <div class="card card-body">
+//         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// `
+//   })
+// });
 
 window.onload = showData(data); 
 //no se ejecuta la función hasta que se asegure que esta todo listo
