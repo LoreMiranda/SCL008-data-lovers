@@ -27,18 +27,19 @@
 <!-- FIN IMAGEN -->
 
 <!-- INICIO BOTONES -->
-<div class="buttons">
 
+<div class="buttons">
+<button class="boton1"><img src="Poke_img/objetos/BolsaObjetos.png" alt="mochila" title="OBJETOS" class="image-button"></button> 
 <button class="boton1"><img src="Poke_img/pokedex-small.png" alt="pokedex" title="POKEDEX" class="image-button"></button>
-<button class="boton1"><img src="Poke_img/objetos/BolsaObjetos.png" alt="mochila" title="OBJETOS" class="image-button"></button>
 <button class="boton1"><img src="Poke_img/map_icon.png" alt="mapa" title="MAPA AVISTAMIENTOS"class="image-button"></button>
 <button class="boton1"><img src="Poke_img/Community_Day.png" alt="eventos" title="EVENTOS" class ="image-button"></button>
+</div>
 
-</div> 
 <!-- FIN BOTONES -->
 
           <!-- Select con opciones que se manejarán desde el DOM -->
  <!-- INICIO SELECT PARA FILTRAR POR TIPO -->
+
 <select id="pokemontype">
     <option value="all">Filtrar Por Tipo</option>
     <option value="Water">Agua</option>
@@ -57,7 +58,7 @@
     <option value="Poison">Veneno</option>
     <option value="Flying">Volador</option>
   </select>
-  
+
   <!--FIN SELECT FILTRAR POR TIPO -->
   
   
@@ -76,9 +77,10 @@
       <option value="order-za">Descendente</option>
       </select>
      <!--FIN SELECT PARA ORDENAR -->
-
-
+  
+  
     <div id="root" class="container-fluid"></div>
+
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>

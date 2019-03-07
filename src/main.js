@@ -9,14 +9,7 @@ const showData = (data) => {
     // data[i]
     container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
                              <p> Número: ${element.num}</p>
-                             <p> Nombre: ${element.name}</p>
-                             <p> Tipo: ${element.type}</p>
-                             <p> Caramelo: ${element.candy}</p>
-                             <p> Huevo: ${element.egg}</p>
-                             <p> Debilidad: ${element.weaknesses}</p>`
-   
-  })
-  
+  })  
 }
 
 // const showData = (data) => {
@@ -33,16 +26,8 @@ document.getElementById('select-type').addEventListener('change', () => {
   container.innerHTML = '';
   result.forEach(element => {
     container.innerHTML += `<img class="img" src="${element.img}" alt="${element.name}">
-                            <p> Número: ${element.num}</p>
-                            <p> Nombre: ${element.name}</p>
-                            <p> Tipo: ${element.type}</p>
-                            <p> Caramelo: ${element.candy}</p>
-                            <p> Huevo: ${element.egg}</p>
-                            <p> Debilidad: ${element.weaknesses}</p>`
-                            
-
+                            <p> Número: ${element.num}</p>                       
   })
-
 });
 
  */
