@@ -14,7 +14,7 @@ const filterData = (data, condition) => {
   }
   
 
-//const sortData = (data, sortBy, sortOrder) => {
+
 // const sortData = (data, sortBy, sortOrder) => {
 //   let orderAz = data.sort((a,b) => {
 // return a[sortBy].localeCompare(b[sortBy]);

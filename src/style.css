@@ -25,10 +25,15 @@
 }
 
 .container-fluid{
+  flex-direction: row;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  padding: 25px 0px 30px 0px;
+  justify-content: center;
   background: black;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
+  /* flex-flow: row wrap; */
+  /* justify-content: space-evenly; */
 }
 
 .nav-tabs{
@@ -36,8 +41,8 @@
 }
 
 .card-img-top{
-  width: 4%;
-  height: 4%;
+  /* width: 80px;
+  height: 100px; */
   margin: 2%;
   justify-content: center;
 }
@@ -53,6 +58,7 @@
  .card-body{
   background: rgb(43, 39, 39);
   border-radius: 2em;
+  width: 100%;
  }
 
  h5, p{
@@ -80,6 +86,8 @@
 }
 
 .card{
+  /* width: 150px;
+  height: 200px; */
   background-color: transparent !important;
   flex-direction: none !important;
   display: flex;
@@ -92,4 +100,8 @@
 
 .card-img{
   justify-content: center;
+}
+
+.card-text{
+  max-height:100%
 }

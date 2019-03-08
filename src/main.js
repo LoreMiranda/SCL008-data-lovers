@@ -7,18 +7,18 @@ const showData = (data) => { //funcion para mostrar la data
 
 //BOTONES
 
-const btnObjetos = document.getElementsByTagName("button")[0];
-const btnPokedex = document.getElementsByTagName("button")[1];
-//const btnMapa = document.getElementsByTagName("button")[2];
+//const btnObjetos = document.getElementsByTagName("button")[0];
+const btnPokedex = document.getElementById("boton-pokedex");
+//const btnMapa = document.getElementById("boton-map");
 //const btnEventos = document.getElementsByTagName("button")[3];
 
 
 //INICIO BOTON POKEDEX Y TEMPLATE DE LA DATA
 btnPokedex.addEventListener("click", () => {
 document.getElementById("root").innerHTML = "";
-
-data.forEach(element => {
-  containerRoot.innerHTML += `
+containerRoot.innerHTML = "";    
+      data.forEach(element => {
+          containerRoot.innerHTML += `
   
       <div class="col-3">
   <div class="card-with-modal">
@@ -35,7 +35,7 @@ data.forEach(element => {
           
           <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="card mb-3" style="max-width: 500px;">
+                  <div class="card mb-4" style="width: 400px;">
                       <div class="row no-gutters">
                         <div class="col-md-6">
                           <img src=${element.img} class="card-img" alt="${element.name}">
@@ -45,14 +45,14 @@ data.forEach(element => {
                           <div class="card-body">
                             <h5 class="card-title">${element.name}</h5>
                             <p class="card-text">N° ${element.num}</p>
+                                                                                                              
                             <p class="card-text">Tipo: ${element.type}</p>
                             <p class="card-text">Caramelos: ${element.candy}</p>
                             <p class="card-text">Caramelos para Evolución: ${element.candy_count}</p>
                             <p class="card-text">Aparece en huevos de: ${element.egg}</p>
                             <p class="card-text">Siguiente Evolución: </p>
                             <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
-                            
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                       
                             <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
@@ -127,59 +127,73 @@ data.forEach(element => {
   })
 };
 
+// INICIO FUNCION BOTON MAPA
+
+// btnMapa.addEventListener("click", () => {
+//   document.getElementById("root").innerHTML = "";` 
+
+// <div class="collapse" id="collapseExample">
+//   <div class="card card-body">
+//   <img src="Poke-img/mapa-santiagoHtml.png" alt="Mapa Avistamientos>
+//   </div>
+// </div>`
+// });
+
+
+
 //INICIO ORDEN DE POKEDEX POR ABC
 
-/*
 
-const pokeAbc = document.getElementById("pokemonOrder");
-pokeAbc.addEventListener("change", () => {
-let condition = document.getElementById("pokemonOrder").value;
-let pokeOrder = window.sortData(data, "nameOrNumber", condition);
-      containerRoot.innerHTML = "";
+
+// const pokeAbc = document.getElementById("pokemonOrder");
+// pokeAbc.addEventListener("change", () => {
+// let condition = document.getElementById("pokemonOrder").value;
+// let pokeOrder = window.sortData(data, "nameOrNumber", condition);
+//       containerRoot.innerHTML = "";
   
       
-  pokeOrder.forEach(element => {
-    containerRoot.innerHTML += `<div class="card-with-modal">
-      <div class="card">
-          <img src=${element.img} class="card-img-top" alt="${element.name}">
-          <div class="card-body">
-            <h5 class="card-title">${element.name}</h5>
-            <p> Tipo: ${element.type}</p>
-            <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
-            <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
-                Más Info!
-              </button>
+//   pokeOrder.forEach(element => {
+//     containerRoot.innerHTML += `<div class="card-with-modal">
+//       <div class="card">
+//           <img src=${element.img} class="card-img-top" alt="${element.name}">
+//           <div class="card-body">
+//             <h5 class="card-title">${element.name}</h5>
+//             <p> Tipo: ${element.type}</p>
+//             <p class="card-text">Débil contra: ${element.weaknesses.join(", ")}</p>
+//             <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter${element.id}">
+//                 Más Info!
+//               </button>
                                 
-              <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                      <div class="card mb-3" style="max-width: 540px;">
-                          <div class="row no-gutters">
-                            <div class="col-md-4">
-                              <img src=${element.img} class="card-img" alt="${element.name}">
-                            </div>
+//               <div class="modal fade" id="exampleModalCenter${element.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+//                 <div class="modal-dialog modal-dialog-centered" role="document">
+//                   <div class="modal-content">
+//                       <div class="card mb-3" style="max-width: 540px;">
+//                           <div class="row no-gutters">
+//                             <div class="col-md-4">
+//                               <img src=${element.img} class="card-img" alt="${element.name}">
+//                             </div>
                                                             
-                            <div class="card-inside-modal">
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">${element.name}</h5>
-                                <p class="card-text">Tipo: ${element.type}</p>
-                                <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
-                                <p class="card-text">Aparece en huevos de: ${element.egg}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>`    
-})
-})
+//                             <div class="card-inside-modal">
+//                             <div class="col-md-8">
+//                               <div class="card-body">
+//                                 <h5 class="card-title">${element.name}</h5>
+//                                 <p class="card-text">Tipo: ${element.type}</p>
+//                                 <p class="card-text">Debilidades: ${element.weaknesses.join(", ")}</p>
+//                                 <p class="card-text">Aparece en huevos de: ${element.egg}</p>
+//                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+//                               </div>
+//                             </div>
+//                           </div>
+//                         </div>
+//                     <div class="modal-footer">
+//                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>`    
+// })
+// })
 
 
 /*for (let i = 0; i < data.length; i++) {
