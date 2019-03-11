@@ -16,7 +16,7 @@ Una vez identificado el usuario a quién estará dirigida la aplicación, se des
 -Usuario presiona botón "pokedex", inmediatamente aparecerán tarjetas con los 151 pokémones.
 -Las tarjetas contarán con datos como tipo y debilidad de cada pokémon, además tendrá la opción de presionar en cada tarjeta para acceder a información más detalla de cada pokémon como cantidad y tipo de dulces que necesita para evolucionar.
 
-![Inicio](inicio.jpg)
+![Inicio](ImgReadme/inicio.jpg)
 
 Imagen de inicio de la app.
 
@@ -29,7 +29,7 @@ Imagen de inicio de la app.
 -Luego elige la opción "seleccionar por tipo".
 -Aparecerán las tarjetas de los pokemones del tipo seleccionado, con datos como su tipo y debilidad, además tendrá la opción de presionar en cada tarjeta para acceder a información más detalla de cada pokémon.
 
-![Filtro](agua.jpg)
+![Filtro](ImgReadme/agua.jpg)
 
 Imagen de pokemones filtrados por tipo agua.
 
@@ -40,24 +40,26 @@ https://trello.com/b/UgVXjdGx/poketablero
 
 Se diseñó un sketch (prototipo de baja fidelidad), para visualizar como deberíaa quedar la aplicación. Se optó por un diseño simple y fácil de entender para el usuario. Este prototipo se testeó en usuarios y se agregaron mejoras de acuerdo a sus recomendaciones.
 
-![Sketch](Poke-img/ImgReadme/objetos.jpeg)
-![Sketch](Poke-img/ImgReadme/pokedata.jpeg)
-![Sketch](Poke-img/ImgReadme/pokeradar.jpeg)
-![Sketch](Poke-img/ImgReadme/pokeventos.jpeg)
+![Sketch](ImgReadme/objetos.jpeg)
+![Sketch](ImgReadme/pokedata.jpeg)
+![Sketch](ImgReadme/pokeradar.jpeg)
+![Sketch](ImgReadme/pokeventos.jpeg)
 
 Imágenes de como se ideó el prototipo de la app.
 
 Luego se hizo un diseño en figma (prototipo de alta fidelidad), el cual fue testeado en usuarios para entregar resultado final.
 
-![Figma](Poke-img/ImgReadme/figma1.jpg)
-![Figma](Poke-img/ImgReadme/figma2.jpg)
-![Figma](Poke-img/ImgReadme/figma3.jpg)
-![Figma](Poke-img/ImgReadme/figma4.jpg)
-![Figma](Poke-img/ImgReadme/figma5.jpg)
-![Figma](Poke-img/ImgReadme/figma6.jpg)
-![Figma](Poke-img/ImgReadme/figma7.jpg)
+![Figma](ImgReadme/figma1.jpg)
+![Figma](ImgReadme/figma2.jpg)
+![Figma](ImgReadme/figma3.jpg)
+![Figma](ImgReadme/figma4.jpg)
+![Figma](ImgReadme/figma5.jpg)
+![Figma](ImgReadme/figma6.jpg)
+![Figma](ImgReadme/figma7.jpg)
 
-Imágenes del prototipo de alta fidelidad.
+Link del Prototipo: https://www.figma.com/proto/P9F3TlvsChbfzhr5nfFGOc4N/Untitled?node-id=139%3A0&scaling=min-zoom
+
+Link de Zeplin: https://scene.zeplin.io/project/5c8258e7081f474d00c36de7
 
 ### Testeos de usuario
 
@@ -69,3 +71,9 @@ Además se hicieron testeo de usuarios de la app, las que quedaron registradas e
 -Demora en cargar la data
 -Botón de filtrado muy pequeño
 -Color de fondo blanco hacía perder enfoque en imágenes
+
+https://www.youtube.com/watch?v=_5KktOjd40U
+https://www.youtube.com/watch?v=QR5VZDRw7YM
+https://www.youtube.com/watch?v=-9pT0mBbZUo
+https://www.youtube.com/watch?v=WQ2PEzz59nw
+https://www.youtube.com/watch?v=BdI58PBvuD4&t=3s
