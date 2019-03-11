@@ -16,8 +16,7 @@ document.getElementById("root").innerHTML = "";
 containerRoot.innerHTML = "";   
 data.forEach(element => {
   containerRoot.innerHTML += 
-  `
-  <div class="col-md-3">
+  `<div class="col-md-3">
   <div class="card-with-modal">
   <div class="card">
       <img src=${element.img} class="card-img-top" alt="${element.name}">
