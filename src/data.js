@@ -21,9 +21,8 @@ window.filterData = filterData;
 
 } */
 
-/* CAMBIOS LORE
+/* CAMBIOS LORE 
 
-//const sortData = (data, sortBy, sortOrder) => {
 const sortData = (data, sortBy, sortOrder) => {
   let orderAz = data.sort((a,b) => {
 return a[sortBy].localeCompare(b[sortBy]);
@@ -33,12 +32,7 @@ return a[sortBy].localeCompare(b[sortBy]);
   }
   return orderAz;
 }
-
+*/
 //const computeStats = (data) => { // esto es para sacar el calculo
-
-//}
-
 //window.sortData = sortData;
 //window.computeStats = computeStats;
-
-*/
