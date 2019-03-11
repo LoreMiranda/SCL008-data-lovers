@@ -22,7 +22,7 @@ window.filterData = filterData;
 
 } */
 
-/* CAMBIOS LORE */
+/* CAMBIOS LORE 
 
 const sortData = (data, sortBy, sortOrder) => {
   let orderAz = data.sort((a,b) => {
@@ -35,6 +35,7 @@ return a[sortBy].localeCompare(b[sortBy]);
 }
 
 window.sortData = sortData;
+*/
 
 //const computeStats = (data) => { // esto es para sacar el calculo
 //window.computeStats = computeStats;

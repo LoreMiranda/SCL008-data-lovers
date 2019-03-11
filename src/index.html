@@ -10,33 +10,27 @@
     </head>
   <body>
 
-<!-- INICIO NAVBAR -->
+<!--NAVBAR CON LOGO -->
 <nav class="navbar navbar-light bg-black .navbar-toggler">
   <a class="navbar-brand" href="#">   
   <img src="Poke_img/logoPokefanGO.png" width="300" height="50" class="d-inline-block align-top" alt="">
   </a>
 </nav>
 
-<!-- FIN NAVBAR -->
-
-<!-- IMAGEN -->
+<!-- IMAGEN DE FONDO -->
 <div class="imagegrass">
 <img src="Poke_img/HEADER2.jpg" class="img-fluid" alt="Responsive image">
 </div>
-<!-- FIN IMAGEN -->
 
-<!-- INICIO BOTONES -->
-
+<!-- POKÉDEX -->
 <div class="buttons">
-<button class="boton1"><img src="Poke_img/objetos/BolsaObjetos.png" id="boton-mochila" alt="mochila" title="OBJETOS" class="image-button"></button> 
 <button class="boton1"><img src="Poke_img/pokedex-small.png" id="boton-pokedex" alt="pokedex" title="POKEDEX" class="image-button"></button>
-<button class="boton1"><img src="Poke_img/map_icon.png" id="boton-map" alt="mapa" title="MAPA AVISTAMIENTOS"class="image-button"></button>
-<button class="boton1"><img src="Poke_img/Community_Day.png" id="boton-event" alt="eventos" title="EVENTOS" class ="image-button"></button>
+<h2>Pincha la POKÉDEX y obtén información sobre tus pokémones abajo</h2>
 </div>
 
-<!-- INICIO SELECT PARA FILTRAR POR TIPO -->
+<!--SELECT PARA FILTRAR POR TIPO -->
 <select id="pokemontype">
-  <option value="all">Filtrar Por Tipo</option>
+  <option value="all">Elige el Tipo de pokémon que quieras filtrar</option>
   <option value="Water">Agua</option>
   <option value="Bug">Bicho</option>
   <option value="Dragon">Dragón</option>
@@ -54,24 +48,14 @@
   <option value="Flying">Volador</option>
 </select>
 
-<!--FIN SELECT FILTRAR POR TIPO -->
-
- <!--INICIO SELECT PARA ELEGIR ORDEN -->
-<select id="pokemonChoose">
-  <option value="nameOrNumber">¿Cómo quieres ordenar?</option>
-  <option value="por-nombre">Nombre</option>
-  <option value="por-numero">Número</option>
-  </select>
-<!-- FIN SELECT PARA ELEGIR ORDEN -->
-
-<!-- INICIO SELECT PARA ORDENAR -->
-
+ <!--SELECT PARA ELEGIR ORDEN -->
 <select id="pokemonOrder">
-    <option value="orientation">Orientación</option>
-    <option value="order-az">Ascendente</option>
-    <option value="order-za">Descendente</option>
-    </select> 
-    
+  <option value="chooseOrder">Elige como ordenar el nombre de tus pokémones</option>
+  <option value="OrderAz">Ordenar de A-Z</option>
+  <option value="OrderZa">Ordenar de Z-A</option>
+  </select>
+
+
     <div id="root" class="container-fluid"></div>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
